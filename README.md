@@ -1,4 +1,4 @@
-> 本文由 [简悦 SimpRead](http://ksria.com/simpread/) 转码， 原文地址 [blog.csdn.net](https://blog.csdn.net/Little_Carter/article/details/133610076)
+
 
 **目录**
 
@@ -29,7 +29,7 @@
 一、前言
 ----
 
-欢迎阅读本篇博客！今天我们深入探索 YOLOv8+deepsort 视觉跟踪算法。结合 YOLOv8 的目标检测和 deepsort 的特征跟踪，该算法在复杂环境下确保了目标的准确与稳定跟踪。在计算机视觉中，这种跟踪技术在安全监控、无人驾驶等领域有着广泛应用。**本文重点探讨基于此算法的车辆检测、跟踪及计数。**演示效果如下：
+
 
 二、[开发环境](https://so.csdn.net/so/search?q=%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83&spm=1001.2101.3001.7020)（前提条件）
 ------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@
 
 **（代码安装资源：[YOLOv8-Deepsort 免费源码](https://download.csdn.net/download/Little_Carter/88398917 "YOLOv8-Deepsort 免费源码")）（强烈推荐**√**）**
 
-**因为看到很多开源的资源都是要么付费，要么需要 vip 才能下载，实在看不下去了！！！所以我决定代码直接免费，这么良心的博主不给个点赞 + 关注 + 收藏嘛 (๑′ᴗ‵๑)**
+
 
 三、[环境搭建](https://so.csdn.net/so/search?q=%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA&spm=1001.2101.3001.7020)教程
 --------------------------------------------------------------------------------------------------------
@@ -95,11 +95,9 @@ conda activate YOLOv8-Deepsort
 #### 3.3.1、克隆 git 储存库
 
 ```
-git clone https://github.com/MuhammadMoinFaisal/YOLOv8-DeepSORT-Object-Tracking.git
+git clone https://github.com/haoxixi1/Vehicle-Detection.git
 
 ```
-
-**也可以点击这个资源免费下载：[YOLOv8-Deepsort 免费源码](https://download.csdn.net/download/Little_Carter/88398917 "YOLOv8-Deepsort 免费源码")（强烈推荐）**
 
 #### 3.3.2、转到克隆库的文件夹下
 
@@ -113,7 +111,10 @@ cd YOLOv8-DeepSORT-Object-Tracking
 ```
 pip install -e ".[dev]"
 
+# pytorch（）需要手动安装
+
 ```
+可能遇到报错`【WARNING:Ignore distutils configs in setup.cfg due to encoding errors】`，参考[WARNING: Ignore distutils configs in setup.cfg due to encoding errors.](https://blog.csdn.net/qq_62904883/article/details/129202962)
 
 #### 3.3.4、转到检测目录下
 
@@ -122,21 +123,16 @@ cd ultralytics/yolo/v8/detect
 
 ```
 
-#### 3.3.5、用于 yolov8 物体检测 + 跟踪 + 车辆计数
+#### 3.3.5、用于 yolov8 物体检测 + 跟踪 + 测距
 
 ```
 python predict.py model=yolov8l.pt source="test3.mp4" show=True
 
 ```
 
-**四、效果图**
----------
 
-**运行完以上那些命令就可以像视频那样的效果啦 (～￣▽￣)～**
 
-![](https://img-blog.csdnimg.cn/2f7fb14b90cd4ccda7ee0f8f74803a20.png)
-
-**五、可能出现的 Error（如果出现报错请看这个）**
+**四、可能出现的 Error（如果出现报错请看这个）**
 -----------------------------
 
 ![](https://img-blog.csdnimg.cn/7b427b8409944b0a834c01521a766e3a.png)
@@ -154,4 +150,3 @@ pip install numpy==1.23.5
 
 ```
 
-**然后再运行上面那个用于 yolov8 物体检测 + 跟踪 + 车辆计数的运行命令即可。**
